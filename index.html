@@ -443,8 +443,8 @@
           </table>
         </div>
         <ul class="insights">
-          <li><strong>Sheet marks 4 MQLs and 1 SQL among these 17</strong> — the SQL is Rohrer Manufacturing, which closed as <strong>the $280k job: the first paid-search sale</strong>.<sup>6</sup> The four newest leads (Jun 25 – Jul 9) haven't been marked yet; hover a marked row for the sheet's reason note. <strong>No new paid-search leads Jul 10–17</strong> — verified against live HubSpot and the LP lead feed on Jul 17.</li>
-          <li><strong>Die-casting queries drive the pipeline</strong>: 5 of the 11 shown leads with a recorded search term came from die-casting terms, including the sole SQL — consistent with narrowing Search to die-casting in June. Sheet-metal terms brought 3 (incl. 1 MQL), CNC 2 (1 MQL), injection molding 1 (the newest, Amazing Magnets).</li>
+          <li><strong>Sheet marks 4 MQLs and 1 SQL among these 18</strong> — the SQL is Rohrer Manufacturing, which closed as <strong>the $280k job: the first paid-search sale</strong>.<sup>6</sup> The five newest leads (Jun 25 – Jul 17) haven't been marked yet; hover a marked row for the sheet's reason note. Newest: <strong>Weiss-Aug Inc. (Jul 17, "die casting company")</strong> — the first paid-search lead of Daniel's Jul 10 – Aug 9 period.</li>
+          <li><strong>Die-casting queries drive the pipeline</strong>: 6 of the 12 shown leads with a recorded search term came from die-casting terms, including the sole SQL and the newest lead (Weiss-Aug) — consistent with narrowing Search to die-casting in June. Sheet-metal terms brought 3 (incl. 1 MQL), CNC 2 (1 MQL), injection molding 1 (Amazing Magnets).</li>
         </ul>
       </div>
     </div>
@@ -493,6 +493,7 @@
   // BigQuery lp_leads (landing page + campaign for the 8 LP quote-form leads).
   // mql/sql: "TRUE" | "FALSE" | "" (blank = not yet marked in the sheet).
   const LEADS = [
+    { ts: "2026-07-17", name: "John Krieg", company: "Weiss-Aug Inc.", email: "jkrieg@weiss-aug.com", utm_campaign: "Search 2026 (Mon-Fri)", page_url: "", search: "die casting company", mql: "", sql: "", reason: "" },
     { ts: "2026-07-09", name: "Candice Li", company: "Amazing Magnets", email: "candice@amazingmagnets.com", utm_campaign: "Search 2026 (Mon-Fri)", page_url: "", search: "injection molding companies in mexico", mql: "", sql: "", reason: "" },
     { ts: "2026-07-09", name: "Michael Kirby", company: "Upsite Technologies", email: "mkirby@upsite.com", utm_campaign: "Remarketing Only", page_url: "/custom-sheet-metal-fabrication/", search: "", mql: "", sql: "", reason: "" },
     { ts: "2026-07-06", name: "Ernesto Vasquez", company: "Eazy Victory", email: "info@eazyvictory.com", utm_campaign: "Search 2026 (Mon-Fri)", page_url: "/sheet-metal-fabrication-companies-in-mexico/", search: "sheet metal fabrication company mexico", mql: "", sql: "", reason: "" },
@@ -569,7 +570,7 @@
       ? fmtDate(rangeFrom || DMIN) + " – " + fmtDate(rangeTo || TODAY)
       : "all time";
     // Sheet's Paid Search count (HubSpot attribution) for months touching the window
-    const PAID_MONTHLY = { "2026-03": 3, "2026-04": 6, "2026-05": 5, "2026-06": 2, "2026-07": 3 };
+    const PAID_MONTHLY = { "2026-03": 3, "2026-04": 6, "2026-05": 5, "2026-06": 2, "2026-07": 4 };
     let sheetN = 0;
     for (const [m, n] of Object.entries(PAID_MONTHLY)) {
       if ((!rangeFrom || rangeFrom <= m + "-31") && (!rangeTo || rangeTo >= m + "-01")) sheetN += n;
