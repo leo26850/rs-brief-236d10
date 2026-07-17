@@ -1,1 +1,680 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><title>Expired</title></head><body style="font-family:system-ui;display:grid;place-items:center;min-height:100vh;margin:0"><p>This report has expired.</p></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Redstone — Marketing One-Pager</title>
+<style>body{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<style>
+  :root {
+    --ground: #f6f5f2;
+    --surface: #fcfcfb;
+    --ink: #16181a;
+    --ink-2: #55534e;
+    --ink-mute: #898781;
+    --grid: #e1e0d9;
+    --baseline: #c3c2b7;
+    --hairline: rgba(11,11,11,0.10);
+    --accent: #b3382c;
+    --good: #006300;
+    --s1: #2a78d6; /* blue */
+    --s2: #1baf7a; /* aqua */
+    --s3: #eda100; /* yellow */
+    --s4: #008300; /* green */
+    --s5: #4a3aa7; /* violet */
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #101010;
+      --surface: #1a1a19;
+      --ink: #f5f4f0;
+      --ink-2: #c3c2b7;
+      --ink-mute: #898781;
+      --grid: #2c2c2a;
+      --baseline: #383835;
+      --hairline: rgba(255,255,255,0.10);
+      --accent: #d9705f;
+      --good: #0ca30c;
+      --s1: #3987e5;
+      --s2: #199e70;
+      --s3: #c98500;
+      --s4: #008300;
+      --s5: #9085e9;
+    }
+  }
+  :root[data-theme="light"] {
+    --ground: #f6f5f2; --surface: #fcfcfb; --ink: #16181a; --ink-2: #55534e;
+    --ink-mute: #898781; --grid: #e1e0d9; --baseline: #c3c2b7;
+    --hairline: rgba(11,11,11,0.10); --accent: #b3382c; --good: #006300;
+    --s1: #2a78d6; --s2: #1baf7a; --s3: #eda100; --s4: #008300; --s5: #4a3aa7;
+  }
+  :root[data-theme="dark"] {
+    --ground: #101010; --surface: #1a1a19; --ink: #f5f4f0; --ink-2: #c3c2b7;
+    --ink-mute: #898781; --grid: #2c2c2a; --baseline: #383835;
+    --hairline: rgba(255,255,255,0.10); --accent: #d9705f; --good: #0ca30c;
+    --s1: #3987e5; --s2: #199e70; --s3: #c98500; --s4: #008300; --s5: #9085e9;
+  }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 14px;
+    line-height: 1.45;
+    margin: 0;
+    padding: 32px 20px 56px;
+  }
+  .page { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; }
+
+  /* ---------- header ---------- */
+  header { border-bottom: 3px solid var(--accent); padding-bottom: 14px; }
+  .eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 4px;
+  }
+  h1 { font-size: 26px; font-weight: 750; letter-spacing: -0.015em; margin: 0 0 6px; text-wrap: balance; }
+  .meta { color: var(--ink-2); font-size: 12.5px; margin: 0; }
+
+  h2 {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 10px; display: flex; align-items: center; gap: 10px;
+  }
+  h2::after { content: ""; flex: 1; height: 1px; background: var(--hairline); }
+
+  /* ---------- KPI strip ---------- */
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  @media (max-width: 720px) { .kpis { grid-template-columns: repeat(2, 1fr); } }
+  .kpi {
+    background: var(--surface); border: 1px solid var(--hairline); border-radius: 6px;
+    padding: 12px 14px; display: flex; flex-direction: column; gap: 2px;
+  }
+  .kpi .label { font-size: 10.5px; font-weight: 650; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-mute); }
+  .kpi .value { font-size: 24px; font-weight: 700; letter-spacing: -0.01em; }
+  .kpi .sub { font-size: 12px; color: var(--ink-2); }
+  .kpi .sub .up-good { color: var(--good); font-weight: 650; }
+
+  /* ---------- cards / layout ---------- */
+  section { display: flex; flex-direction: column; gap: 0; }
+  .card {
+    background: var(--surface); border: 1px solid var(--hairline); border-radius: 6px;
+    padding: 14px 16px 12px;
+  }
+  .card h3 { font-size: 13px; font-weight: 650; margin: 0 0 8px; color: var(--ink); }
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 720px) { .duo { grid-template-columns: 1fr; } }
+  .stack { display: flex; flex-direction: column; gap: 10px; }
+
+  svg { display: block; width: 100%; height: auto; }
+  svg text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .bar:hover, .seg:hover { opacity: 0.82; }
+  .bar, .seg { transition: opacity 120ms ease; }
+  @media (prefers-reduced-motion: reduce) { .bar, .seg { transition: none; } }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 8px; font-size: 12px; color: var(--ink-2); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+  ul.insights { margin: 10px 0 0; padding-left: 18px; color: var(--ink-2); font-size: 13px; }
+  ul.insights li { margin: 3px 0; }
+  ul.insights strong { color: var(--ink); font-weight: 650; }
+
+  /* ---------- tables ---------- */
+  .tablewrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+  th {
+    text-align: left; font-size: 10.5px; font-weight: 650; letter-spacing: 0.07em; text-transform: uppercase;
+    color: var(--ink-mute); padding: 5px 10px 5px 0; border-bottom: 1px solid var(--baseline);
+    white-space: nowrap;
+  }
+  td { padding: 5px 10px 5px 0; border-bottom: 1px solid var(--grid); color: var(--ink-2); white-space: nowrap; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.name { color: var(--ink); font-weight: 550; }
+  tr.total td { border-bottom: none; border-top: 1.5px solid var(--baseline); color: var(--ink); font-weight: 650; }
+  .pill {
+    display: inline-block; font-size: 10.5px; font-weight: 650; letter-spacing: 0.04em;
+    padding: 1px 8px; border-radius: 999px; border: 1px solid var(--hairline);
+  }
+  .pill.run { color: var(--good); border-color: currentColor; }
+  .pill.off { color: var(--ink-mute); }
+
+  /* ---------- callouts ---------- */
+  .callouts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  @media (max-width: 720px) { .callouts { grid-template-columns: 1fr; } }
+  .callout { border-left: 3px solid var(--accent); background: var(--surface); border-radius: 0 6px 6px 0; border-top: 1px solid var(--hairline); border-right: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 10px 12px; font-size: 12.5px; color: var(--ink-2); }
+  .callout b { display: block; color: var(--ink); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 3px; }
+  .callout.win { border-left-color: var(--good); }
+
+  /* ---------- interactive lead table ---------- */
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
+  .controls input[type="search"] {
+    flex: 1 1 200px; max-width: 280px; font: inherit; font-size: 12.5px;
+    color: var(--ink); background: var(--ground); border: 1px solid var(--hairline);
+    border-radius: 5px; padding: 5px 10px;
+  }
+  .controls input[type="search"]:focus { outline: 2px solid var(--s1); outline-offset: 1px; }
+  .chipbar { display: flex; gap: 6px; flex-wrap: wrap; }
+  .chip {
+    font: inherit; font-size: 11.5px; font-weight: 600; color: var(--ink-2);
+    background: var(--ground); border: 1px solid var(--hairline); border-radius: 999px;
+    padding: 3px 11px; cursor: pointer;
+  }
+  .chip[aria-pressed="true"] { color: var(--surface); background: var(--ink); border-color: var(--ink); }
+  .chip:focus-visible { outline: 2px solid var(--s1); outline-offset: 1px; }
+  .count { font-size: 11.5px; color: var(--ink-mute); margin-left: auto; }
+  .controls label { font-size: 11.5px; color: var(--ink-2); display: inline-flex; align-items: center; gap: 5px; }
+  .controls input[type="date"] {
+    font: inherit; font-size: 12px; color: var(--ink); background: var(--ground);
+    border: 1px solid var(--hairline); border-radius: 5px; padding: 3px 7px;
+  }
+  .controls input[type="date"]:focus { outline: 2px solid var(--s1); outline-offset: 1px; }
+  .timebar-wrap { margin: 0 0 12px; }
+  #timebar { display: block; width: 100%; height: 56px; touch-action: none; cursor: crosshair; }
+  .recon { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; }
+  @media (max-width: 720px) { .recon { grid-template-columns: repeat(2, 1fr); } }
+  .recon > div {
+    background: var(--ground); border: 1px solid var(--hairline); border-radius: 5px;
+    padding: 8px 10px; display: flex; flex-direction: column; gap: 1px;
+  }
+  .recon b { font-size: 17px; font-weight: 700; color: var(--ink); }
+  .recon span { font-size: 10.5px; color: var(--ink-mute); line-height: 1.35; }
+  th.sortable { cursor: pointer; user-select: none; }
+  th.sortable:hover { color: var(--ink); }
+  th.sortable .dir { color: var(--accent); }
+  .src { display: inline-flex; align-items: center; gap: 6px; }
+  .src i { width: 9px; height: 9px; border-radius: 2px; flex: none; }
+  td.email a { color: var(--s1); text-decoration: none; }
+  td.email a:hover { text-decoration: underline; }
+  td .pg { font-variant-numeric: normal; color: var(--ink-2); }
+
+  footer { border-top: 1px solid var(--baseline); padding-top: 10px; }
+  footer ol { margin: 6px 0 0; padding-left: 18px; font-size: 11.5px; color: var(--ink-mute); }
+  footer ol li { margin: 2px 0; }
+  footer .foot-title { font-size: 10.5px; font-weight: 650; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-mute); }
+  sup { color: var(--accent); font-weight: 650; }
+</style>
+
+<div class="page">
+  <header>
+    <p class="eyebrow">Redstone Manufacturing · KAMG</p>
+    <h1>Marketing Performance — One-Pager</h1>
+    <p class="meta">March – July 17, 2026 &nbsp;·&nbsp; compiled Jul 17, 2026 &nbsp;·&nbsp; sources: Roadmap “Lead Data” tab, Daniel Hall monthly PPC reports, live Lemlist + HubSpot API pulls</p>
+  </header>
+
+  <!-- ================= KPI STRIP ================= -->
+  <div class="kpis">
+    <div class="kpi">
+      <span class="label">Total leads · Mar–Jun</span>
+      <span class="value">858</span>
+      <span class="sub">276 → 163 /mo · volume −41%</span>
+    </div>
+    <div class="kpi">
+      <span class="label">Blended CPL · June</span>
+      <span class="value">$119.73</span>
+      <span class="sub"><span class="up-good">▼ 69%</span> vs March ($385.56)</span>
+    </div>
+    <div class="kpi">
+      <span class="label">Google Ads · 4 periods<sup>1</sup></span>
+      <span class="value">$18,531</span>
+      <span class="sub">52 leads · $356 CPL · $280k closed</span>
+    </div>
+    <div class="kpi">
+      <span class="label">Cold email · to date</span>
+      <span class="value">729 sent</span>
+      <span class="sub">47% open · 3 replies · 39 bounced</span>
+    </div>
+  </div>
+
+  <!-- ================= LEADS ================= -->
+  <section>
+    <h2>Leads</h2>
+    <div class="stack">
+      <div class="duo">
+        <div class="card">
+          <h3>Total leads by month</h3>
+          <svg viewBox="0 0 360 170" role="img" aria-label="Bar chart of total leads by month: March 276, April 253, May 166, June 163, July partial 47">
+            <line x1="8" y1="140" x2="352" y2="140" stroke="var(--baseline)" stroke-width="1"/>
+            <path class="bar" fill="var(--s1)" d="M22.4,140 V20 Q22.4,16 26.4,16 H58.4 Q62.4,16 62.4,20 V140 Z"><title>March — 276 leads (127 MQL · 7 SQL)</title></path>
+            <path class="bar" fill="var(--s1)" d="M91.2,140 V30.3 Q91.2,26.3 95.2,26.3 H127.2 Q131.2,26.3 131.2,30.3 V140 Z"><title>April — 253 leads (106 MQL · 3 SQL)</title></path>
+            <path class="bar" fill="var(--s1)" d="M160,140 V69.4 Q160,65.4 164,65.4 H196 Q200,65.4 200,69.4 V140 Z"><title>May — 166 leads (101 MQL · 6 SQL)</title></path>
+            <path class="bar" fill="var(--s1)" d="M228.8,140 V70.8 Q228.8,66.8 232.8,66.8 H264.8 Q268.8,66.8 268.8,70.8 V140 Z"><title>June — 163 leads (MQL count in sheet looks lagged²)</title></path>
+            <path class="bar" fill="var(--s1)" opacity="0.45" d="M297.6,140 V118.9 Q297.6,114.9 301.6,114.9 H333.6 Q337.6,114.9 337.6,118.9 V140 Z"><title>July (through Jul 17) — 47 leads</title></path>
+            <text x="42.4" y="10" text-anchor="middle" font-size="11" font-weight="650" fill="var(--ink)">276</text>
+            <text x="111.2" y="20.3" text-anchor="middle" font-size="11" font-weight="650" fill="var(--ink)">253</text>
+            <text x="180" y="59.4" text-anchor="middle" font-size="11" font-weight="650" fill="var(--ink)">166</text>
+            <text x="248.8" y="60.8" text-anchor="middle" font-size="11" font-weight="650" fill="var(--ink)">163</text>
+            <text x="317.6" y="108.9" text-anchor="middle" font-size="11" font-weight="650" fill="var(--ink-mute)">47</text>
+            <text x="42.4" y="156" text-anchor="middle" font-size="11" fill="var(--ink-mute)">Mar</text>
+            <text x="111.2" y="156" text-anchor="middle" font-size="11" fill="var(--ink-mute)">Apr</text>
+            <text x="180" y="156" text-anchor="middle" font-size="11" fill="var(--ink-mute)">May</text>
+            <text x="248.8" y="156" text-anchor="middle" font-size="11" fill="var(--ink-mute)">Jun</text>
+            <text x="317.6" y="156" text-anchor="middle" font-size="11" fill="var(--ink-mute)">Jul*</text>
+          </svg>
+        </div>
+        <div class="card">
+          <h3>Blended cost per lead ($)</h3>
+          <svg viewBox="0 0 360 170" role="img" aria-label="Line chart of blended CPL: March $385.56, April $360.00, May $181.67, June $119.73">
+            <line x1="36" y1="20" x2="352" y2="20" stroke="var(--grid)" stroke-width="1"/>
+            <line x1="36" y1="80" x2="352" y2="80" stroke="var(--grid)" stroke-width="1"/>
+            <line x1="36" y1="140" x2="352" y2="140" stroke="var(--baseline)" stroke-width="1"/>
+            <text x="32" y="23" text-anchor="end" font-size="10" fill="var(--ink-mute)">400</text>
+            <text x="32" y="83" text-anchor="end" font-size="10" fill="var(--ink-mute)">200</text>
+            <text x="32" y="143" text-anchor="end" font-size="10" fill="var(--ink-mute)">0</text>
+            <polyline points="52,24.3 145,32 239,85.5 332,104.1" fill="none" stroke="var(--s1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle cx="52" cy="24.3" r="4" fill="var(--s1)"><title>March — $385.56</title></circle>
+            <circle cx="145" cy="32" r="4" fill="var(--s1)"><title>April — $360.00 (−6.6%)</title></circle>
+            <circle cx="239" cy="85.5" r="4" fill="var(--s1)"><title>May — $181.67 (−49.5%)</title></circle>
+            <circle cx="332" cy="104.1" r="4" fill="var(--s1)"><title>June — $119.73 (−34.1%)</title></circle>
+            <text x="52" y="14" text-anchor="middle" font-size="11" font-weight="650" fill="var(--ink)">$386</text>
+            <text x="332" y="94" text-anchor="middle" font-size="11" font-weight="650" fill="var(--ink)">$120</text>
+            <text x="52" y="156" text-anchor="middle" font-size="11" fill="var(--ink-mute)">Mar</text>
+            <text x="145" y="156" text-anchor="middle" font-size="11" fill="var(--ink-mute)">Apr</text>
+            <text x="239" y="156" text-anchor="middle" font-size="11" fill="var(--ink-mute)">May</text>
+            <text x="332" y="156" text-anchor="middle" font-size="11" fill="var(--ink-mute)">Jun</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Funnel &amp; unit economics — MQL · SQL · CAC<sup>2</sup></h3>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Month</th><th class="num">Total leads</th><th class="num">MQL</th><th class="num">SQL</th>
+                <th class="num">Cost / MQL</th><th class="num">Cost / SQL</th><th class="num">Closed Won</th><th class="num">Total Deal Value</th><th class="num">CAC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="name">Target</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">~$500</td><td class="num">~$1,000</td><td class="num">—</td><td class="num">—</td><td class="num">~$4,000</td></tr>
+              <tr><td class="name">March</td><td class="num">276</td><td class="num">127</td><td class="num">7</td><td class="num">$867.50</td><td class="num">$495.71</td><td class="num">0</td><td class="num">—</td><td class="num">—</td></tr>
+              <tr><td class="name">April</td><td class="num">253</td><td class="num">106</td><td class="num">3</td><td class="num">$617.14</td><td class="num">$1,440.00</td><td class="num">0</td><td class="num">—</td><td class="num">—</td></tr>
+              <tr><td class="name">May</td><td class="num">166</td><td class="num">101</td><td class="num">6</td><td class="num">$545.00</td><td class="num">$363.33</td><td class="num">1</td><td class="num">$280,000</td><td class="num">$4,834<sup>6</sup></td></tr>
+              <tr><td class="name">June</td><td class="num">163</td><td class="num">1<sup>2</sup></td><td class="num">3</td><td class="num">$329.25</td><td class="num">$439.00</td><td class="num">0</td><td class="num">—</td><td class="num">—</td></tr>
+              <tr><td class="name">July*</td><td class="num">47</td><td class="num">0</td><td class="num">0</td><td class="num">—</td><td class="num">—</td><td class="num">0</td><td class="num">—</td><td class="num">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <ul class="insights">
+          <li><strong>June funnel costs are under target</strong> — Cost/MQL $329 vs ~$500, Cost/SQL $439 vs ~$1,000 — and Cost/MQL has fallen four months straight ($868 → $329). Definitions per the sheet: MQL = qualified for a discovery call, SQL = deal created (~2 MQLs → 1 SQL); the ~$4,000 CAC target assumes a 25% close rate on SQLs.</li>
+          <li><strong>The counting method changed mid-stream</strong>: March–May MQL counts (101–127/mo) are the old HubSpot-derived numbers; from ~June, MQLs and SQLs are marked manually per lead in the sheet's Inbound Leads tab under a much stricter bar (4 MQLs, 1 SQL marked among all paid leads to date). Don't compare across that boundary — and with counts this small, unit costs swing on single deals.<sup>2</sup></li>
+          <li><strong>CAC = the month's ad spend ÷ that month's closed-won deals</strong> — months with zero closed-won have no CAC (the sheet's modeled "CPA" column is excluded; it implied customers that didn't exist). The first closed-won is attributed to May, its lead month: Rohrer Manufacturing, the $280k job (die-casting lead May 13, MQL → SQL → closed).<sup>6</sup> May CAC = $4,833.80 ÷ 1 ≈ <strong>$4,834</strong>, just above the ~$4,000 target — while the deal itself returned ~15× the entire four-month ad budget ($280k vs $18,531 total spend).</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Lead source mix by month — RB2B visitor-IDs excluded</h3>
+        <svg viewBox="0 0 520 150" role="img" aria-label="Stacked horizontal bars of lead sources per month, March through June, excluding RB2B visitor identifications">
+          <!-- March: 118 + 3 + 13 = 134 -->
+          <text x="46" y="25" text-anchor="end" font-size="11" fill="var(--ink-mute)">Mar</text>
+          <rect class="seg" x="52" y="10" width="369.9" height="22" rx="2" fill="var(--s1)"><title>March · Offline — 118</title></rect>
+          <rect class="seg" x="423.4" y="10" width="9.4" height="22" rx="1" fill="var(--s4)"><title>March · Paid Search — 3</title></rect>
+          <rect class="seg" x="434.3" y="10" width="40.7" height="22" rx="2" fill="var(--s5)"><title>March · Other web (direct/organic/referral/AI) — 13</title></rect>
+          <text x="479" y="25" font-size="11" font-weight="650" fill="var(--ink)">134</text>
+          <!-- April: 88 + 6 + 16 = 110 -->
+          <text x="46" y="59" text-anchor="end" font-size="11" fill="var(--ink-mute)">Apr</text>
+          <rect class="seg" x="52" y="44" width="275.8" height="22" rx="2" fill="var(--s1)"><title>April · Offline — 88</title></rect>
+          <rect class="seg" x="329.3" y="44" width="18.8" height="22" rx="1" fill="var(--s4)"><title>April · Paid Search — 6</title></rect>
+          <rect class="seg" x="349.6" y="44" width="50.1" height="22" rx="2" fill="var(--s5)"><title>April · Other web — 16</title></rect>
+          <text x="404" y="59" font-size="11" font-weight="650" fill="var(--ink)">110</text>
+          <!-- May: 88 + 5 + 19 = 112 -->
+          <text x="46" y="93" text-anchor="end" font-size="11" fill="var(--ink-mute)">May</text>
+          <rect class="seg" x="52" y="78" width="275.8" height="22" rx="2" fill="var(--s1)"><title>May · Offline — 88</title></rect>
+          <rect class="seg" x="329.3" y="78" width="15.7" height="22" rx="1" fill="var(--s4)"><title>May · Paid Search — 5</title></rect>
+          <rect class="seg" x="346.5" y="78" width="59.6" height="22" rx="2" fill="var(--s5)"><title>May · Other web — 19</title></rect>
+          <text x="410" y="93" font-size="11" font-weight="650" fill="var(--ink)">112</text>
+          <!-- June: 100 + 2 + 13 = 115 -->
+          <text x="46" y="127" text-anchor="end" font-size="11" fill="var(--ink-mute)">Jun</text>
+          <rect class="seg" x="52" y="112" width="313.4" height="22" rx="2" fill="var(--s1)"><title>June · Offline — 100</title></rect>
+          <rect class="seg" x="366.9" y="112" width="6.3" height="22" rx="1" fill="var(--s4)"><title>June · Paid Search — 2</title></rect>
+          <rect class="seg" x="374.7" y="112" width="40.7" height="22" rx="2" fill="var(--s5)"><title>June · Other web — 13</title></rect>
+          <text x="420" y="127" font-size="11" font-weight="650" fill="var(--ink)">115</text>
+        </svg>
+        <div class="legend">
+          <span><i style="background:var(--s1)"></i>Offline</span>
+          <span><i style="background:var(--s4)"></i>Paid Search</span>
+          <span><i style="background:var(--s5)"></i>Other web (direct · organic · referral · AI)</span>
+        </div>
+        <ul class="insights">
+          <li><strong>RB2B visitor-IDs are excluded from this chart</strong> (they dominated the scale at 142 → 55/mo and drove most of the headline lead decline — they're identified visitors, not inquiries). What remains is steady: Offline ~88–118/mo, and real web inquiries (paid + organic + direct + referral) at 15–25/mo.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GOOGLE ADS ================= -->
+  <section>
+    <h2>Google Ads</h2>
+    <div class="stack">
+      <div class="duo">
+        <div class="card">
+          <h3>Spend &amp; leads by reporting period<sup>1</sup></h3>
+          <svg viewBox="0 0 360 190" role="img" aria-label="Bar chart of Google Ads spend per monthly reporting period with leads and CPL">
+            <line x1="8" y1="140" x2="352" y2="140" stroke="var(--baseline)" stroke-width="1"/>
+            <path class="bar" fill="var(--s1)" d="M27,140 V38.5 Q27,34.5 31,34.5 H71 Q75,34.5 75,38.5 V140 Z"><title>Mar 10 – Apr 9 — $4,919.23 · 12 leads · $411.80 CPL</title></path>
+            <path class="bar" fill="var(--s1)" d="M113,140 V73.2 Q113,69.2 117,69.2 H157 Q161,69.2 161,73.2 V140 Z"><title>Apr 10 – May 9 — $3,301.25 · 11 leads · $300.11 CPL</title></path>
+            <path class="bar" fill="var(--s1)" d="M199,140 V40.3 Q199,36.3 203,36.3 H243 Q247,36.3 247,40.3 V140 Z"><title>May 10 – Jun 9 — $4,833.80 · 17 leads · $284.34 CPL · remarketing drove 10/17</title></path>
+            <path class="bar" fill="var(--s1)" d="M285,140 V26.5 Q285,22.5 289,22.5 H329 Q333,22.5 333,26.5 V140 Z"><title>Jun 10 – Jul 9 — $5,476.65 · 12 leads · $456.39 CPL · CPC spike</title></path>
+            <text x="51" y="28.5" text-anchor="middle" font-size="10.5" font-weight="650" fill="var(--ink)">$4,919</text>
+            <text x="137" y="63.2" text-anchor="middle" font-size="10.5" font-weight="650" fill="var(--ink)">$3,301</text>
+            <text x="223" y="30.3" text-anchor="middle" font-size="10.5" font-weight="650" fill="var(--ink)">$4,834</text>
+            <text x="309" y="16.5" text-anchor="middle" font-size="10.5" font-weight="650" fill="var(--ink)">$5,477</text>
+            <text x="51" y="156" text-anchor="middle" font-size="10.5" fill="var(--ink-mute)">Mar 10–Apr 9</text>
+            <text x="137" y="156" text-anchor="middle" font-size="10.5" fill="var(--ink-mute)">Apr 10–May 9</text>
+            <text x="223" y="156" text-anchor="middle" font-size="10.5" fill="var(--ink-mute)">May 10–Jun 9</text>
+            <text x="309" y="156" text-anchor="middle" font-size="10.5" fill="var(--ink-mute)">Jun 10–Jul 9</text>
+            <text x="51" y="171" text-anchor="middle" font-size="10.5" fill="var(--ink-2)">12 · $412 CPL</text>
+            <text x="137" y="171" text-anchor="middle" font-size="10.5" fill="var(--ink-2)">11 · $300 CPL</text>
+            <text x="223" y="171" text-anchor="middle" font-size="10.5" fill="var(--ink-2)">17 · $284 CPL</text>
+            <text x="309" y="171" text-anchor="middle" font-size="10.5" fill="var(--ink-2)">12 · $456 CPL</text>
+          </svg>
+        </div>
+        <div class="card">
+          <h3>Platform metrics (calendar months)<sup>1</sup></h3>
+          <div class="tablewrap">
+            <table>
+              <thead><tr><th>Month</th><th class="num">Clicks</th><th class="num">Impr.</th><th class="num">Conv.</th><th class="num">CTR</th><th class="num">Conv. rate</th></tr></thead>
+              <tbody>
+                <tr><td class="name">April</td><td class="num">859</td><td class="num">21,039</td><td class="num">9</td><td class="num">4.1%</td><td class="num">1.0%</td></tr>
+                <tr><td class="name">May</td><td class="num">758</td><td class="num">23,522</td><td class="num">11</td><td class="num">3.2%</td><td class="num">1.5%</td></tr>
+                <tr><td class="name">June</td><td class="num">135</td><td class="num">4,863</td><td class="num">6</td><td class="num">2.8%</td><td class="num">4.4%</td></tr>
+                <tr class="total"><td>Total</td><td class="num">1,752</td><td class="num">49,424</td><td class="num">26</td><td class="num">3.5%</td><td class="num">1.5%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul class="insights">
+            <li>June volume fell by design — Search narrowed to <strong>die-casting only</strong> and mobile/tablet traffic was paused Jun 4. Conversion rate tripled to <strong>4.4%</strong>.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callouts">
+        <div class="callout win"><b>Win — $280k job closed</b>The die-casting Search campaign sourced <strong>Rohrer Manufacturing</strong> ("die casting companies in mexico", May 13) — now closed as the <strong>$280k job</strong>. One deal returned ~15× the four-month ad budget. Campaign kept on.</div>
+        <div class="callout"><b>Watch — CPC inflation</b>Summer competition pushed CPC from $13.43 to $33.08, lifting period CPL to $456. Remarketing stayed efficient: 8 leads at $109.84.</div>
+        <div class="callout"><b>Heads-up — Aug 16</b>Google's tCPA/tCPL change means target CPL stops acting as a spend ceiling. Google's Jun 1 pacing change (daily budget ×30.4) already forced a July budget-down.</div>
+      </div>
+
+      <div class="card">
+        <h3>Google Ads leads — landing-page detail<sup>5</sup></h3>
+        <div class="recon">
+          <div><b>52</b><span>Google Ads leads recorded — Daniel's reports, Mar 10 – Jul 9 (sheet rows 57–64)</span></div>
+          <div><b>19</b><span>Paid Search leads — sheet source breakdown, HubSpot attribution, Mar–Jul</span></div>
+          <div><b>138</b><span>RB2B Adwords visitor-IDs — sheet source breakdown (low-intent, not form fills)</span></div>
+          <div><b>21</b><span>with row-level detail below — sheet “Inbound Leads” tab (manual MQL/SQL marks); 8 also carry LP page + campaign from BigQuery<sup>5</sup></span></div>
+        </div>
+        <div class="controls">
+          <input type="search" id="lead-search" placeholder="Search name, email, company, page…" aria-label="Search leads">
+          <div class="chipbar" id="lead-chips" role="group" aria-label="Filter by campaign">
+            <button class="chip" data-campaign="" aria-pressed="true">All</button>
+            <button class="chip" data-campaign="Search 2026 (Mon-Fri)" aria-pressed="false">Search 2026</button>
+            <button class="chip" data-campaign="Remarketing Only" aria-pressed="false">Remarketing</button>
+            <button class="chip" data-campaign="__none" aria-pressed="false">No campaign tag</button>
+          </div>
+          <span class="count" id="lead-count"></span>
+        </div>
+        <div class="controls">
+          <div class="chipbar" id="range-chips" role="group" aria-label="Filter by date range">
+            <button class="chip" data-range="all" aria-pressed="true">All time</button>
+            <button class="chip" data-range="month" aria-pressed="false">This month</button>
+            <button class="chip" data-range="week" aria-pressed="false">This week</button>
+          </div>
+          <label>From <input type="date" id="date-from" min="2026-03-01" max="2026-07-31"></label>
+          <label>To <input type="date" id="date-to" min="2026-03-01" max="2026-07-31"></label>
+        </div>
+        <div class="timebar-wrap">
+          <svg id="timebar" viewBox="0 0 600 56" aria-label="Timeline of lead submissions, March to July 2026 — drag to select a date range"></svg>
+        </div>
+        <div class="tablewrap">
+          <table id="lead-table">
+            <thead>
+              <tr>
+                <th class="sortable" data-key="ts" aria-sort="descending">Date <span class="dir">▼</span></th>
+                <th class="sortable" data-key="name">Lead</th>
+                <th class="sortable" data-key="email">Email</th>
+                <th class="sortable" data-key="page_url">Landing page</th>
+                <th class="sortable" data-key="utm_campaign">Lead source</th>
+                <th class="sortable" data-key="mql">MQL</th>
+                <th class="sortable" data-key="sql">SQL</th>
+                <th class="sortable" data-key="action">Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <ul class="insights">
+          <li><strong>Sheet marks 4 MQLs and 1 SQL among these 21</strong> — the SQL is Rohrer Manufacturing, which closed as <strong>the $280k job: the first paid-search sale</strong>.<sup>6</sup> The five newest leads (Jun 25 – Jul 9) haven't been marked yet; hover a marked row for the sheet's reason note.</li>
+          <li><strong>Die-casting queries drive the pipeline</strong>: 7 of the 14 leads with a recorded search term came from die-casting terms, including the sole SQL — consistent with narrowing Search to die-casting in June. Sheet-metal terms brought 3 (incl. 1 MQL), CNC 2 (1 MQL), injection molding 2 (incl. the newest, Amazing Magnets).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COLD EMAIL ================= -->
+  <section>
+    <h2>Cold Email (Lemlist)</h2>
+    <div class="card">
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Campaign</th><th>Status</th><th class="num">Sent</th><th class="num">Opened</th><th class="num">Open rate</th><th class="num">Replied</th><th class="num">Bounced</th><th class="num">Not interested</th></tr></thead>
+          <tbody>
+            <tr><td class="name">A — Core</td><td><span class="pill run">Running</span></td><td class="num">462</td><td class="num">225</td><td class="num">49%</td><td class="num">0</td><td class="num">22</td><td class="num">0</td></tr>
+            <tr><td class="name">B — Big Co. China</td><td><span class="pill off">Ended</span></td><td class="num">148</td><td class="num">74</td><td class="num">50%</td><td class="num">1</td><td class="num">7</td><td class="num">1</td></tr>
+            <tr><td class="name">C — Target (Location)</td><td><span class="pill off">Completed</span></td><td class="num">46</td><td class="num">26</td><td class="num">57%</td><td class="num">2</td><td class="num">4</td><td class="num">1</td></tr>
+            <tr><td class="name">D — Sales Reps</td><td><span class="pill off">Ended</span></td><td class="num">73</td><td class="num">21</td><td class="num">29%</td><td class="num">0</td><td class="num">6</td><td class="num">0</td></tr>
+            <tr><td class="name">E — Tariff Top-of-Mind</td><td><span class="pill off">Paused · 0 leads</span></td><td class="num">0</td><td class="num">0</td><td class="num">—</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+            <tr class="total"><td>Total</td><td></td><td class="num">729</td><td class="num">346</td><td class="num">47%</td><td class="num">3</td><td class="num">39</td><td class="num">2</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="insights">
+        <li><strong>Deliverability and opens are healthy</strong> (47% open, 5.3% bounce) but conversion is the bottleneck: 0 clicks and a 0.41% reply rate across 729 sends — the copy/offer needs work before scaling volume.</li>
+        <li><strong>C — Target (Location) is the standout</strong>: 2 of 3 total replies from its 46 sends (4.3% reply rate), now completed. Campaign A's first 462 sends have produced 0 replies, with 579 leads still queued — worth folding C's angle into A before they burn.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <span class="foot-title">Notes &amp; data caveats</span>
+    <ol>
+      <li>Google Ads spend/leads follow Daniel Hall's 10th–9th reporting periods; the platform-metrics table is calendar months. Don't divide one by the other.</li>
+      <li>MQL/SQL are marked <strong>manually in the sheet's Inbound Leads tab</strong> (per-lead TRUE/FALSE + reason) — that tab, not HubSpot, is the source of truth. June's "1 MQL" reflects this stricter manual method replacing the HubSpot-derived counts behind March–May, so cross-month funnel comparisons and the sheet's unit-cost math are directional only. Leads from Jun 25 onward are still unmarked.</li>
+      <li>June source breakdown sums to 170 vs 163 in the lead overview (sheet inconsistency). July is partial (through Jul 17) and was refreshed from live HubSpot on Jul 17, excluding 11 test/QA contacts from the site-cutover form testing — earlier July snapshots counted contacts since removed from the CRM.</li>
+      <li>Cold-email figures are a live Lemlist API pull (Jul 17). Lemlist is the source of truth — the BigQuery reply webhook under-captures (1 of 3 replies).</li>
+      <li>Lead detail = the sheet's <strong>Inbound Leads tab</strong> (21 Paid Search rows with manual MQL/SQL marks) joined with BigQuery <code>lp_leads</code> (adds landing page + campaign for the 8 LP quote-form leads; the 12 untagged rows are main-site leads whose gclid/campaign wasn't captured). This reconciles with the sheet's 19 Paid-Search source count. Daniel's 52 counts Google Ads <em>conversions</em> over 10th–9th periods (a different event than a recorded lead row); 137 = RB2B-identified ad visitors, not form fills. Brochure downloads aren't a tracked event yet (brochures still in production, RED-163), so no lead can show one.</li>
+      <li>Rohrer = the $280k job, confirmed by Leo (Jul 10). The closed-won is attributed to May, the lead's month (per Leo) — the lead arrived May 13, the close was confirmed Jul 10, and Daniel attributes the conversion to his Jun 10 – Jul 9 period, so the three systems date this deal three different ways. May CAC uses Daniel's May 10 – Jun 9 spend ($4,833.80) as the month's cost. For context, acquiring this first customer consumed $18,531 of cumulative spend since March. The Inbound Leads tab has no Closed Won / Total Deal Value columns yet; adding them would make CAC a live formula instead of a footnote.</li>
+    </ol>
+  </footer>
+</div>
+
+<script>
+  // Sheet "Inbound Leads" tab (Paid Search rows, manual MQL/SQL marks) joined with
+  // BigQuery lp_leads (landing page + campaign for the 8 LP quote-form leads).
+  // mql/sql: "TRUE" | "FALSE" | "" (blank = not yet marked in the sheet).
+  const LEADS = [
+    { ts: "2026-07-09", name: "Candice Li", company: "Amazing Magnets", email: "candice@amazingmagnets.com", utm_campaign: "Search 2026 (Mon-Fri)", page_url: "", search: "injection molding companies in mexico", mql: "", sql: "", reason: "" },
+    { ts: "2026-07-09", name: "Michael Kirby", company: "Upsite Technologies", email: "mkirby@upsite.com", utm_campaign: "Remarketing Only", page_url: "/custom-sheet-metal-fabrication/", search: "", mql: "", sql: "", reason: "" },
+    { ts: "2026-07-06", name: "Ernesto Vasquez", company: "Eazy Victory", email: "info@eazyvictory.com", utm_campaign: "Search 2026 (Mon-Fri)", page_url: "/sheet-metal-fabrication-companies-in-mexico/", search: "sheet metal fabrication company mexico", mql: "", sql: "", reason: "" },
+    { ts: "2026-06-25", name: "Steve Baur", company: "Marathon Coach Inc.", email: "steveb@marathoncoach.com", utm_campaign: "Remarketing Only", page_url: "/sheet-metal-fabrication-services/", search: "", mql: "", sql: "", reason: "" },
+    { ts: "2026-06-01", name: "Melvin Fields", company: "Filtered Fields Industries LLC", email: "filteredfields@yahoo.com", utm_campaign: "Remarketing Only", page_url: "/sheet-metal-fabrication-companies-in-mexico/", search: "", mql: "", sql: "", reason: "" },
+    { ts: "2026-05-26", name: "", company: "", email: "abassett2026@outlook.com", utm_campaign: "", page_url: "", search: "injection molding companies in mexico", mql: "FALSE", sql: "FALSE", reason: "" },
+    { ts: "2026-05-21", name: "Kevin Stone", company: "Stewart Audio", email: "kevin.stone@stewartaudio.com", utm_campaign: "Search 2026 (Mon-Fri)", page_url: "/sheet-metal-fabrication-companies-in-mexico/", search: "sheet metal fabrication mexico", mql: "TRUE", sql: "FALSE", reason: "Discovery call held. Confirming total deal value before quoting." },
+    { ts: "2026-05-21", name: "Adrian Velasquez", company: "Devonics", email: "adrianvelasquez@devonics.com", utm_campaign: "Search 2026 (Mon-Fri)", page_url: "/cnc-mexico/", search: "mexico cnc", mql: "TRUE", sql: "FALSE", reason: "Lead self-disqualified — volumes are too low. No discovery call held." },
+    { ts: "2026-05-19", name: "", company: "", email: "finley.ulm@gmail.com", utm_campaign: "", page_url: "", search: "die casting company", mql: "FALSE", sql: "FALSE", reason: "" },
+    { ts: "2026-05-13", name: "Ray Knotts", company: "Rohrer Manufacturing", email: "ray@rohrermfg.com", utm_campaign: "Search 2026 (Mon-Fri)", page_url: "/aluminum-die-casting-companies-in-mexico/", search: "die casting companies in mexico", mql: "TRUE", sql: "TRUE", closed: true, reason: "Sheet: “Sending samples to China for quoting.” Closed — this is the $280k die-casting job from Daniel’s June report (confirmed Jul 10)." },
+    { ts: "2026-05-05", name: "", company: "Yanfeng", email: "alfredo.nunez@yanfeng.com", utm_campaign: "", page_url: "", search: "die casting company", mql: "FALSE", sql: "FALSE", reason: "" },
+    { ts: "2026-04-30", name: "", company: "LG Electronics", email: "hector.benitez@lge.com", utm_campaign: "", page_url: "", search: "die casting company", mql: "FALSE", sql: "FALSE", reason: "" },
+    { ts: "2026-04-23", name: "Joe Miller", company: "Nelson Miller Group", email: "joe.miller@nelsonmillergroup.com", utm_campaign: "Search 2026 (Mon-Fri)", page_url: "/sheet-metal-fabrication-company/", search: "sheet metal fabrication company", mql: "FALSE", sql: "FALSE", reason: "" },
+    { ts: "2026-04-21", name: "", company: "Fathom", email: "jordan.greco@fathommfg.com", utm_campaign: "", page_url: "", search: "die casting mexico", mql: "FALSE", sql: "FALSE", reason: "" },
+    { ts: "2026-04-16", name: "", company: "Advance Adapters", email: "randy@advanceadapters.com", utm_campaign: "", page_url: "", search: "cnc machining mexico", mql: "FALSE", sql: "FALSE", reason: "" },
+    { ts: "2026-04-15", name: "", company: "", email: "twainirwin@outlook.com", utm_campaign: "", page_url: "", search: "aluminum die casting", mql: "FALSE", sql: "FALSE", reason: "" },
+    { ts: "2026-04-15", name: "", company: "Speed Virtual Product Development", email: "jonathan.couch@speedvirtualpd.com", utm_campaign: "", page_url: "", search: "die casting companies in mexico", mql: "TRUE", sql: "FALSE", reason: "" },
+    { ts: "2026-04-07", name: "", company: "Rbet Sales", email: "israel@rbetsales.com", utm_campaign: "", page_url: "", search: "", mql: "FALSE", sql: "FALSE", reason: "" },
+    { ts: "2026-03-31", name: "", company: "studioDVLP", email: "chloe@studiodvlp.com", utm_campaign: "", page_url: "", search: "", mql: "FALSE", sql: "FALSE", reason: "" },
+    { ts: "2026-03-12", name: "", company: "Teladoc Health", email: "tperrin@teladochealth.com", utm_campaign: "", page_url: "", search: "", mql: "FALSE", sql: "FALSE", reason: "" },
+    { ts: "2026-03-11", name: "", company: "NJ TRANSIT", email: "orahman@njtransit.com", utm_campaign: "", page_url: "", search: "", mql: "FALSE", sql: "FALSE", reason: "" }
+  ];
+  const SOURCE_COLOR = { "Search 2026 (Mon-Fri)": "var(--s1)", "Remarketing Only": "var(--s2)", "Location Specific": "var(--s3)" };
+
+  const tbody = document.querySelector("#lead-table tbody");
+  const search = document.getElementById("lead-search");
+  const chips = Array.from(document.querySelectorAll("#lead-chips .chip"));
+  const countEl = document.getElementById("lead-count");
+  let sortKey = "ts", sortDir = -1, campaign = "";
+  let rangeFrom = null, rangeTo = null; // YYYY-MM-DD strings, null = unbounded
+
+  // ---- date-range plumbing (all comparisons on YYYY-MM-DD strings) ----
+  const DMIN = "2026-03-01", DMAX = "2026-07-31", DAY = 86400000;
+  const pad = (n) => String(n).padStart(2, "0");
+  const isoOf = (d) => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+  const toDate = (s) => new Date(s + "T12:00:00");
+  const TODAY = isoOf(new Date()) > DMAX ? DMAX : isoOf(new Date());
+  const dayIdx = (s) => Math.round((toDate(s) - toDate(DMIN)) / DAY);
+  const NDAYS = dayIdx(DMAX) + 1;
+  const X0 = 10, XW = 580;
+  const xOf = (s) => X0 + dayIdx(s) / NDAYS * XW;
+  const dateAtX = (x) => {
+    const i = Math.max(0, Math.min(NDAYS - 1, Math.floor((x - X0) / XW * NDAYS)));
+    return isoOf(new Date(toDate(DMIN).getTime() + i * DAY));
+  };
+
+  const fmtDate = (iso) => new Date(iso + "T12:00:00Z")
+    .toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  function render() {
+    const q = search.value.trim().toLowerCase();
+    let rows = LEADS.filter((r) =>
+      (!campaign || (campaign === "__none" ? !r.utm_campaign : r.utm_campaign === campaign)) &&
+      (!rangeFrom || r.ts >= rangeFrom) && (!rangeTo || r.ts <= rangeTo) &&
+      (!q || [r.name, r.company, r.email, r.page_url, r.utm_campaign, r.search].join(" ").toLowerCase().includes(q))
+    );
+    rows.sort((a, b) => {
+      const va = (a[sortKey] || "").toString().toLowerCase();
+      const vb = (b[sortKey] || "").toString().toLowerCase();
+      return va < vb ? -sortDir : va > vb ? sortDir : 0;
+    });
+    const mark = (v) => v === "TRUE" ? '<span class="pill run">Yes</span>'
+      : v === "FALSE" ? '<span style="color:var(--ink-mute)">No</span>'
+      : '<span style="color:var(--ink-mute);font-style:italic" title="Not yet marked in the sheet">pending</span>';
+    tbody.innerHTML = rows.map((r) => `
+      <tr${r.reason ? ` title="${esc(r.reason)}"` : ""}>
+        <td class="num" style="text-align:left">${fmtDate(r.ts)}</td>
+        <td class="name">${esc(r.name || r.company || "—")}${r.name && r.company ? `<br><span style="font-weight:400;color:var(--ink-mute);font-size:11.5px">${esc(r.company)}</span>` : ""}</td>
+        <td class="email"><a href="mailto:${esc(r.email)}">${esc(r.email)}</a></td>
+        <td>${r.page_url ? `<span class="pg">${esc(r.page_url)}</span>` : '<span style="color:var(--ink-mute)">—</span>'}</td>
+        <td><span class="src"><i style="background:${r.utm_campaign ? (SOURCE_COLOR[r.utm_campaign] || "var(--s5)") : "var(--ink-mute)"}"></i>${esc(r.utm_campaign || "Paid Search (untagged)")}</span>${r.search ? `<br><span style="color:var(--ink-mute);font-size:11px">“${esc(r.search)}”</span>` : ""}</td>
+        <td>${mark(r.mql)}</td>
+        <td>${mark(r.sql)}</td>
+        <td>${r.closed ? '<span class="pill run">★ Closed — $280k</span>' : `<span class="pill ${r.page_url ? "run" : "off"}">${r.page_url ? "Quote request — LP" : "Website lead"}</span>`}</td>
+      </tr>`).join("");
+    const span = (rangeFrom || rangeTo)
+      ? fmtDate(rangeFrom || DMIN) + " – " + fmtDate(rangeTo || TODAY)
+      : "all time";
+    // Sheet's Paid Search count (HubSpot attribution) for months touching the window
+    const PAID_MONTHLY = { "2026-03": 3, "2026-04": 6, "2026-05": 5, "2026-06": 2, "2026-07": 3 };
+    let sheetN = 0;
+    for (const [m, n] of Object.entries(PAID_MONTHLY)) {
+      if ((!rangeFrom || rangeFrom <= m + "-31") && (!rangeTo || rangeTo >= m + "-01")) sheetN += n;
+    }
+    const approx = (rangeFrom || rangeTo) ? "~" : "";
+    countEl.textContent = rows.length + " of " + LEADS.length + " detailed leads · sheet records "
+      + approx + sheetN + " Paid Search in window · " + span;
+  }
+
+  search.addEventListener("input", render);
+  chips.forEach((chip) => chip.addEventListener("click", () => {
+    campaign = chip.dataset.campaign;
+    chips.forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
+    render();
+  }));
+  document.querySelectorAll("#lead-table th.sortable").forEach((th) => th.addEventListener("click", () => {
+    const key = th.dataset.key;
+    if (sortKey === key) sortDir = -sortDir; else { sortKey = key; sortDir = 1; }
+    document.querySelectorAll("#lead-table th.sortable").forEach((h) => {
+      const d = h.querySelector(".dir");
+      if (d) d.remove();
+      h.removeAttribute("aria-sort");
+    });
+    th.insertAdjacentHTML("beforeend", ' <span class="dir">' + (sortDir === 1 ? "▲" : "▼") + "</span>");
+    th.setAttribute("aria-sort", sortDir === 1 ? "ascending" : "descending");
+    render();
+  }));
+
+  // ---- timeline calendar (brushable) ----
+  const tb = document.getElementById("timebar");
+  const fromInput = document.getElementById("date-from");
+  const toInput = document.getElementById("date-to");
+  const rangeChips = Array.from(document.querySelectorAll("#range-chips .chip"));
+  const MONTHS = [["2026-03-01", "March"], ["2026-04-01", "April"], ["2026-05-01", "May"], ["2026-06-01", "June"], ["2026-07-01", "July"]];
+
+  function drawTimebar() {
+    const selFrom = rangeFrom || DMIN;
+    const selTo = rangeTo || TODAY;
+    const sx = xOf(selFrom), ex = xOf(selTo) + XW / NDAYS;
+    let s = `<rect x="${X0}" y="16" width="${XW}" height="22" rx="4" fill="var(--ground)" stroke="var(--hairline)"/>`;
+    for (const [d, label] of MONTHS) {
+      if (d !== DMIN) s += `<line x1="${xOf(d)}" y1="16" x2="${xOf(d)}" y2="38" stroke="var(--grid)"/>`;
+      s += `<text x="${xOf(d) + 4}" y="51" font-size="10" fill="var(--ink-mute)">${label}</text>`;
+    }
+    s += `<rect x="${sx.toFixed(1)}" y="16" width="${Math.max(2, ex - sx).toFixed(1)}" height="22" fill="var(--s1)" opacity="0.18"/>
+      <line x1="${sx.toFixed(1)}" y1="13" x2="${sx.toFixed(1)}" y2="41" stroke="var(--s1)" stroke-width="2"/>
+      <line x1="${ex.toFixed(1)}" y1="13" x2="${ex.toFixed(1)}" y2="41" stroke="var(--s1)" stroke-width="2"/>`;
+    const perDay = {};
+    for (const r of LEADS) perDay[r.ts] = (perDay[r.ts] || 0) + 1;
+    for (const [d, c] of Object.entries(perDay)) {
+      const cx = (xOf(d) + XW / NDAYS / 2).toFixed(1);
+      s += `<circle cx="${cx}" cy="27" r="${c > 1 ? 5 : 3.5}" fill="var(--accent)"><title>${fmtDate(d)} — ${c} lead${c > 1 ? "s" : ""}</title></circle>`;
+      if (c > 1) s += `<text x="${cx}" y="11" text-anchor="middle" font-size="9" font-weight="650" fill="var(--ink-2)">${c}</text>`;
+    }
+    const tx = (xOf(TODAY) + XW / NDAYS / 2).toFixed(1);
+    s += `<line x1="${tx}" y1="14" x2="${tx}" y2="40" stroke="var(--ink-mute)" stroke-dasharray="2 3"/>
+      <text x="${tx}" y="51" text-anchor="middle" font-size="9" fill="var(--ink-mute)">today</text>`;
+    tb.innerHTML = s;
+  }
+
+  function setRange(f, t, preset) {
+    rangeFrom = f; rangeTo = t;
+    fromInput.value = f || "";
+    toInput.value = t || "";
+    rangeChips.forEach((c) => c.setAttribute("aria-pressed", String(c.dataset.range === preset)));
+    drawTimebar();
+    render();
+  }
+
+  rangeChips.forEach((chip) => chip.addEventListener("click", () => {
+    const now = new Date();
+    if (chip.dataset.range === "all") setRange(null, null, "all");
+    else if (chip.dataset.range === "month") setRange(isoOf(new Date(now.getFullYear(), now.getMonth(), 1)), TODAY, "month");
+    else setRange(isoOf(new Date(now.getFullYear(), now.getMonth(), now.getDate() - ((now.getDay() + 6) % 7))), TODAY, "week");
+  }));
+  [fromInput, toInput].forEach((el) => el.addEventListener("change", () => {
+    let f = fromInput.value || null, t = toInput.value || null;
+    if (f && t && f > t) [f, t] = [t, f];
+    setRange(f, t, f || t ? null : "all");
+  }));
+
+  const dateAtPointer = (e) => {
+    const r = tb.getBoundingClientRect();
+    return dateAtX((e.clientX - r.left) / r.width * 600);
+  };
+  let dragging = false, anchor = null;
+  tb.addEventListener("pointerdown", (e) => {
+    dragging = true; anchor = dateAtPointer(e);
+    tb.setPointerCapture(e.pointerId);
+    setRange(anchor, anchor, null);
+  });
+  tb.addEventListener("pointermove", (e) => {
+    if (!dragging) return;
+    const d = dateAtPointer(e);
+    setRange(d < anchor ? d : anchor, d < anchor ? anchor : d, null);
+  });
+  tb.addEventListener("pointerup", () => { dragging = false; });
+
+  drawTimebar();
+  render();
+</script>
+
+
+</body>
+</html>
